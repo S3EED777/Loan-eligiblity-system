@@ -1,4 +1,2 @@
-streamlit==1.26.0
-Pillow==9.4.0
-pytesseract
-scikit-learn=1.2.1
+Pillow==10.1.0
+streamlit==1.29.0
