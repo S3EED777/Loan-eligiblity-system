@@ -1,8 +1,3 @@
 streamlit
-pickle
-pandas
-numpy
-seaborn
-matplotlib
-scikit-learn
-matplotlib.pyplot
+Pillow
+pytesseract

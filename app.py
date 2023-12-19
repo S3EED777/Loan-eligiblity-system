@@ -2,15 +2,28 @@ import streamlit as st
 from PIL import Image
 import pickle
 
-
-model = pickle.load(open('C:/Users/S3EED/Downloads/Pro/ML_Model1.pkl', 'rb'))
+model = pickle.load(open('./Model/ML_Model.pkl', 'rb'))
 
 def run():
-    img1 = Image.open('C:/Users/S3EED/Downloads/Pro/extras/utas.png')
-    st.title("Bank Loan Eligibility using Machine Learning")
 
-    ## Account No
-    account_no = st.text_input('Account number')
+
+    img1 = Image.open('./img/utas.png')
+    img2 = Image.open('./img/Sohar.jpg')
+    st.image(img1, use_column_width=True)
+
+    col1, col2 = st.columns(2)
+    with col1:
+        st.title("Bank Loan Prediction using Machine Learning")
+        # Add other widgets or text here
+
+    # Display the image in the second column
+    with col2:
+        st.image(img2, use_column_width=True)
+        st.markdown("<p style='font-size: 16px'>Colaburation with bank Sohar</p>", unsafe_allow_html=True)
+
+
+
+# Your app code goes here
 
     ## Full Name
     fn = st.text_input('Full Name')
@@ -60,17 +73,18 @@ def run():
         prediction = model.predict(features)
         lc = [str(i) for i in prediction]
         ans = int("".join(lc))
+        salutation = "Mr." if gen_display[gen] == 'Male' else "Ms."
+
         if ans == 0:
             st.error(
-                "Hello: " + fn +" || "
-                "Account number: "+account_no +' || '
-                'According to our Calculations, you will not get the loan from Bank'
-            )
+             f"Hello {salutation} {fn}, "
+          "According to our calculations, you will not get the loan from Bank"
+          )
         else:
             st.success(
-                "Hello: " + fn +" || "
-                "Account number: "+account_no +' || '
-                'Congratulations!! you will get the loan from Bank'
-            )
+           f"Hello {salutation} {fn}, "
+        "Congratulations!! You will get the loan from Bank"
+         )
+
 
 run()
