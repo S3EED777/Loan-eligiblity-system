@@ -1,3 +1,4 @@
 streamlit
 Pillow
 pytesseract
+scikit-learn
