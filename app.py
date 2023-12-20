@@ -37,7 +37,7 @@ def run():
 
     DAYS_ID_PUBLISH = st.number_input("Days of publish",value=0)
 
-    DAYS_REGISTRATION = st.number_input("How many dayes you have been with us?",value=0)
+    DAYS_REGISTRATION = st.number_input("How many days you have been with us?",value=0)
     
     CNT_CHILDREN = st.number_input("Num of Children",value=0)
     
@@ -47,7 +47,7 @@ def run():
     
     AMT_CREDIT = st.number_input("Credit",value=0)
     
-    DAYS_EMPLOYED = st.number_input("how many days you have been emploied",value=0)
+    DAYS_EMPLOYED = st.number_input("how many days you have been employed",value=0)
 
     AMT_INCOME_TOTAL = st.number_input("yearly income",value=0)
 
